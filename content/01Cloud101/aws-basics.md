@@ -14,16 +14,27 @@ Application Diagram
 To achieve your goal you will use the public cloud to create resources, download code, grant permissions and finally expose your website to the entire world.  All this will be achieved using the Amazon Web Services (AWS) web console,a web browser and a few simple commands.
 
 Good luck!
-## Log into AWS Console
-Before we can do anything you will need to get access AWS web console in your browser. The log in details for your lab provided AWS account are on the left hand of the lab.  Each field has a copy link you can use.
+## Log into Qwiklabs
+Your first taks will be to create an AWS cloud account using Qwicklabs website.
 
-Click on the `Open Console` link.
+[Fortinet's Qwiklabs](https://fortinet.qwiklabs.com/users/sign_in)
 
-![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/qwiklabs-lab-details.png)
+Use the username/password provided by your lab teachers.
 
-Copy/paste the `Username`, `Password` and click `Sign In`.
+![](../01cloud101/img/qwiklabs-login.png)
+## Select the course
+After you log into Qwiklabs select the in progress course 'Public Cloud 104 CNAPP'.
 
-![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-login.png)
+![](../01cloud101/img/qwiklabs-select-course.png)
+
+## Select the lab
+Next select the 'Lab 1: Create AWS Cloud Account'.
+
+![](../01cloud101/img/qwiklabs-select-lab.png)
+
+## Follow the directions in the Qwiklabs lab
+Return here after you have access to your brand new AWS cloud account.
+
 ## Create an Virtual Server
 Now that you have access to the AWS Console let's get working!
 
@@ -69,9 +80,42 @@ On the Connect to instance window, keep the default option of `EC2 Instance Conn
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-5.png)
 
-If succesful, you should see a terminal like interface within your AWS Console. Now you are ready to run some commands.
+If successful, you should see a terminal like interface within your AWS Console.
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-6.png)
+## Ease into the Terminal Experience
+Let's run a few simple commands to get comfortable on the terminal.  Copy each command below and paste it into the terminal interface.
+
+First let's run the command that Prints the current Working Directory we are in: pwd
+```bash
+pwd
+```
+![](..//01cloud101/img/cli-pwd.png)
+
+When we logged into our virtual server we were dropped into the home directory of the ubuntu user.
+
+Next let's list all the files or directories in the current working directory: ls -lah
+```bash
+ls -a
+```
+![](..//01cloud101/img/cli-ls-a.png)
+
+In addition to runing the 'ls' command you passed a single argument 'a'. The 'a' modifier tells the 'ls' command to list all of the files or directories, even hidden ones.
+
+Finally let's see how we can learn more about any Linux command.  Here we will use the 'man' command.  The 'man' command will explain what a command does and what possible arguments the command will accept.
+```bash
+man ls
+```
+![](..//01cloud101/img/cli-man-ls.png)
+
+Notice that we can see the an explanation of the '-a' argument we passed into 'ls'. The argument directs 'ls' to not ignore entries starting with '.'.  Any file or directory in Linux starting with '.' is normally hidden from listing.
+
+To exit the 'man' command hit the 'q' key.
+
+For bonus points try running the 'man' command to explain the what the 'man' command does.
+```bash
+man man
+```
 ## Download the website code
 The code for your new website is stored in git repository hosted on GitHub. Git/GitHub allow developers to collaborate together and share code.  Almost no modern company develops all of their own code. Developers rely on using many other projects to save time and effort while delivering business value.
 
@@ -111,7 +155,7 @@ The command below will use the Ubuntu built in package management application (a
 sudo apt update && sudo apt install -y nodejs npm
 ```
 
-Notice how many files are installed running just these few commands. Hopefully there aren't any negative side effecs of making all these changes.
+Notice how many files are installed running just these few commands. Hopefully there aren't any negative side effects of making all these changes.
 ## Install your website dependencies
 As we mentioned all modern software is built on top of other software.  Your simple website is no exception.  In Node these software dependencies are listed in a file called `package.json`.
 
@@ -123,7 +167,7 @@ cat hello-world/package.json
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-ec2-cat-package.png)
 
-Before you can start your website you will need to install these dependencies.  Luckily you already installed the Node package manager `npm`. Run the command below to chagne directory and install the needed Node packages.
+Before you can start your website you will need to install these dependencies.  Luckily you already installed the Node package manager `npm`. Run the command below to change directory and install the needed Node packages.
 
 ```bash
 cd ~/hello-world
@@ -132,13 +176,13 @@ npm install
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-ec2-npm-install.png)
 
-Notice that we only had 4 direct dependencies in our `package.json` file, but we actually added 229 packages. This is because our direct dependencies have their own dependencies, which in turn might yet more dependencies.  Software is built ontop of software. Turtles all the way down.
+Notice that we only had 4 direct dependencies in our `package.json` file, but we actually added 229 packages. This is because our direct dependencies have their own dependencies, which in turn might yet more dependencies.  Software is built on top of software. Turtles all the way down.
 
 Even more concerning is the warning that there are 8 vulnerabilities found, including 5 of high severity.
 
 Well no time to worry about all of that, you have a website to get up and running!
 ## Start up your website
-To keep your website up and running you will use the `pm2` binary installed in the step above using npm.  The job of `pm2` is to ensure that your website stays up andrunning even if the virtual server gets restarted or your website crashes.
+To keep your website up and running you will use the `pm2` binary installed in the step above using npm.  The job of `pm2` is to ensure that your website stays up and running even if the virtual server gets restarted or your website crashes.
 
 ```bash
 ./node_modules/pm2/bin/pm2 start index.js
@@ -152,9 +196,13 @@ Go back to the AWS EC2 Service, click on your instance. You will find the public
 
 Note: use the copy link and not the 'open address' link
 
-You will need to add the port the website is running on `3000`.
+You will need to add the port the website is running on `3000`.  Let's hope that port is actually open, otherwise we might not be able to access our new website.
 
 `http://<Your-IP>:3000`
+
+> [!info] Take Notice
+> Ensure that you include 'http://' as modern browsers will try and force you onto 'https://', which listens on a different port (433).
+
 ## Hello is anyone listening?
 You might have noticed that when you visited the URL of your newly launched website nothing happened, your browser tab just spun and spun. AWS EC2 be default only allows inbound network connections on port 22, the default port of SSH.  Since your website is not running on port 22 all other inbound traffic was blocked. Next task is to open up some ports to allow inbound traffic to reach your virtual server.
 
@@ -166,7 +214,7 @@ Ensure you are on the `Inbound Rules` tab and click on `Edit inbound rules`.
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-ec2-lauch-inbound-rules.png)
 
-You will need click `Add rule` to create a new inbound rule. Then specify the `Protocol` as `TCP`, `Port range` of `1000-6000` and ensure anyone on the internet can access by specifying a `Source` of `0.0.0.0/0`.
+You will need click `Add rule` to create a new inbound rule. Then specify the `Protocol` as `TCP`, `Port range` of `0-65000` and ensure anyone on the internet can access by specifying a `Source` of `0.0.0.0/0`.
 
 Notice that we opened up way more ports than we need and AWS warns us about allowing all inbound IP addresses. These are just the type of decisions that are now entrusted to anyone with a cloud account.
 
@@ -185,7 +233,7 @@ As you might recall from the very beginning we mentioned that your website would
 By default when you create a new EC2 instance there is no IAM role attached.  This means that your virtual machine can not access any other cloud resources at the moment.
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-ec2-no-role-defined.png)
-## Attach a new IAM role
+## Create a new IAM role
 To attach a new IAM role to your virtual server click on `Action`, then `Security` and finally `Modify IAM role`.
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-ec2-modify-role.png)
@@ -210,6 +258,10 @@ Finally the hardest choice you have made all day. What do you name this new role
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-iam-create-role.png)
 
+> [!info] Take Notice
+> You can close the IAM role creation page, we are done here!
+
+## Attach IAM role to your EC2 Virtual Server
 Return to the previous page where you where trying to attache a role.  Click the circle icon, select your new role from the drop down and click `Update IAM role`.
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/ec2-attach-new-role.png)
@@ -232,6 +284,6 @@ All of this happened without involving IT, development, security, management, op
 
 What could go wrong?
 ## Take a break already
-Once you complete this section of the lab, please take a break and talk amongst your peers about what you learned, we’ll come together once everyone has finished
+Once you complete this section of the lab, please take a break and talk amongst your peers about what you learned, we will all come back together once everyone has finished
 
 ![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/break-time-7298ce200c.jpg)
