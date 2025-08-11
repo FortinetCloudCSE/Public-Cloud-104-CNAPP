@@ -12,7 +12,7 @@ For Lab 1 you will use Qwiklabs to provision a AWS.  Once you have access to the
 
 To create your AWS Cloud account click on the 'Start Lab' icon in the upper left.
 
-![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/qwiklabs-start-lab.png)
+![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/qwiklabs-lab-started.png)
 
 ## Open the AWS Console
 The log in details for your AWS account will appear on the left had side.  Each field has a copy link you can use.
@@ -29,4 +29,4 @@ Copy/paste the `Username`, `Password` and click `Sign In`.
 ## Logged into AWS, Close Qwiklabs
 If you are seeing the page below, feel free to close Qwiklabs!
 
-![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-account-logged-in.png)
+![](https://fortinetcloudcse.github.io/FortiDevOps/01cloud101/img/aws-account-user-logged-in.png)
