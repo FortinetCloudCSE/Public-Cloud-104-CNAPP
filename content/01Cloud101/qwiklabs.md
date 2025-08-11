@@ -1,7 +1,8 @@
 ---
-title: ""
-linkTitle: ""
+title: "Qwiklabs"
+linkTitle: "Qwiklabs"
 weight: 0
+headless: true
 ---
 
 ## Welcome to Qwiklabs
