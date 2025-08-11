@@ -1,3 +1,9 @@
+---
+title: ""
+linkTitle: ""
+weight: 0
+---
+
 ## Welcome to Qwiklabs
 For Lab 1 you will use Qwiklabs to provision a AWS.  Once you have access to the AWS accont you can close Qwiklabs.
 
