@@ -15,11 +15,11 @@ To achieve your goal you will use the public cloud to create resources, download
 
 Good luck!
 ## Log into Qwiklabs
-Your first taks will be to create an AWS cloud account using Qwicklabs website.
+Your first task will be to create an new AWS cloud account using Qwiklabs.
 
-[Fortinet's Qwiklabs](https://fortinet.qwiklabs.com/users/sign_in)
+[Fortinet's Qwiklabs](https://fortinet.qwiklabs.com/classrooms/90)
 
-Use the username/password provided by your lab teachers.
+Use the email/password provided by your lab teachers to log in to Qwiklabs.
 
 ![](../01cloud101/img/qwiklabs-login.png)
 ## Select the course
