@@ -1,5 +1,7 @@
 ## Welcome to Qwiklabs
-For Lab 1 you will use Qwiklabs to provision a AWS.  Once you have access to the AWS accont you can close Qwiklabs.
+In this lab you will create a new AWS Cloud account and gain access to the web console for you new cloud account.
+
+Once you have loged into to your new AWS Cloud accont you can close Qwiklabs.
 
 ## Create a AWS Account
 
@@ -20,6 +22,6 @@ Copy/paste the `Username`, `Password` and click `Sign In`.
 ![](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/img/aws-login.png)
 
 ## Logged into AWS, Close Qwiklabs
-If you are seeing the page below, feel free to close Qwiklabs!
+If you are seeing a page like the image below, feel free to close Qwiklabs and return to the Xperts course to continue your work.
 
 ![](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/img/aws-account-user-logged-in.png)
