@@ -8,7 +8,7 @@ weight: 3
 
 Check out the web application you got up and running in the last lab. A hacker was able to find a weakness in the code running on your virtual server.
 
-![](img/pwned.png)
+{{< figure src="pwned.png" >}}
 
 Hackers have goals like all of us.  Once they have found a breach they get to work on those goals. They want to create another way to access you virtual server in case you fix the current exploit. They will want to find other virtual servers or resources within your environment.  Ultimately they will want to try and gain access to your cloud account itself.
 
@@ -26,7 +26,7 @@ You did get a warning from NPM about vulnerabilities with some of the code you i
 npm audit fix --force
 ```
 
-![](img/ec2-npm-audit-fix.png)
+{{< figure src="ec2-npm-audit-fix.png" >}}
 
 While this didn't resolve all of the security issues, it did reduce your risk from 4 highs to 1 high (and one moderate) vulnerablity.
 
@@ -45,7 +45,7 @@ nc -l 5000
 ```
 In your browser return to your web application page and replace the `3000` with `5000` and reload the page.  Got back to the AWS Instant Connect console where you will find you were able to connect with netcat.  Note you can see what browser used, the OS and the IP address of where the request came from.
 
-![](img/aws-ec2-netcat.png)
+{{< figure src="aws-ec2-netcat.png" >}}
 
 Take away is opening too many ports is not a great idea.  Be careful what you expose to the Internet!
 
@@ -64,7 +64,7 @@ TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metad
 curl -v -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/iam/security-credentials/; echo ""
 ```
 
-![](img/ec2-curl-metadata-role.png)
+{{< figure src="ec2-curl-metadata-role.png" >}}
 
 Replace the role name returned from the previous command for <ROLE_NAME> in the command below.  The output of the command below will include a set of AWS security credentials (AccessKeyId, SercretKey and Token). 
 

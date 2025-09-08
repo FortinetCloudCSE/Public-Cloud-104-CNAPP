@@ -7,6 +7,9 @@
   "logoBannerSubText":"",
   "errorLevel":"warning",
   "googleServicesID":"G-5RZBH288ST",
-  "marketingCode": "Public-Cloud-104-CNAPP",
+  "marketingCode": "XPerts25",
+  "bannerLine1":"Public Cloud 104",
+  "bannerLine2":"Intro to Cloud Native Security",
+  "bannerLine3":"with Lacework FortiCNAPP",
   "shortcuts": []
 }
