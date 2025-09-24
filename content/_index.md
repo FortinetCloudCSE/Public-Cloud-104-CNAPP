@@ -9,3 +9,5 @@ description: "Hugo for Fortinet TEC Workshops"
 ## Welcome!
 
 In this workshop you will learn the basics of cloud security and how a Cloud Native Application Protection Platform (CNAPP) can help gain insights and improve your security posture.
+
+{{< quizframe page="/gamebytag?tag=ch1" height="800" width="100%" >}}
