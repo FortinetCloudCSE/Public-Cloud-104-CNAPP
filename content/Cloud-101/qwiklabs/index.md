@@ -7,22 +7,22 @@ Once you have loged into to your new AWS Cloud accont you can close Qwiklabs.
 
 To create your AWS Cloud account click on the 'Start Lab' icon in the upper left.
 
-![Start Lab](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/qwiklabs/qwiklabs-lab-started.png)
+![Start Lab](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/cloud-101/qwiklabs/qwiklabs-lab-started.png)
 
 ## Open the AWS Console
 The log in details for your AWS account will appear on the left had side.  Each field has a copy link you can use.
 
 Click on the `Open Console` link.
 
-![Open Console](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/qwiklabs/qwiklabs-lab-details.png)
+![Open Console](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/cloud-101/qwiklabs/qwiklabs-lab-details.png)
 
 ## Log into AWS Console
 Copy/paste the `Username`, `Password` and click `Sign In`.
 
-![Log In](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/qwiklabs/aws-login.png)
+![Log In](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/cloud-101/qwiklabs/aws-login.png)
 
 ## Logged into AWS, Close Qwiklabs
 If you are seeing a page like the image below, feel free to close Qwiklabs and return to the Xperts course to continue your work.
 
-![Close Qkiklabs](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/01cloud101/qwiklabs/aws-account-user-logged-in.png)
+![Close Qkiklabs](https://fortinetcloudcse.github.io/Public-Cloud-104-CNAPP/cloud-101/qwiklabs/aws-account-user-logged-in.png)
 
