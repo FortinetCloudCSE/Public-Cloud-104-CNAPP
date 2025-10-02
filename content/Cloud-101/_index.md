@@ -73,7 +73,7 @@ Phew! You now have a brand new virtual server up and running in EC2.  Click on t
 ## Access your Virtual Server
 Next you need to gain access to your new virtual server so you can make it actually do something useful.  Developers often connect to servers using a secure shell (SSH).  AWS offers a simple way to do this called `Instance Connect`.  Instance Connect will allow you to gain a connection to your new virtual server using your browser.  After gaining access you will be able to run commands on the server.
 
-Right-click on the instance name of your new instance and choose `Connect`.
+Click on the `Connect` button in the upper right hand of the page.
 
 {{< figure src="img/aws-4.png" >}}
 
@@ -199,10 +199,13 @@ Note: use the copy link and not the 'open address' link
 
 You will need to add the port the website is running on `3000`.  Let's hope that port is actually open, otherwise we might not be able to access our new website.
 
-`http://<Your-IP>:3000`
-
 > [!info] Take Notice
 > Ensure that you include 'http://' as modern browsers will try and force you onto 'https://', which listens on a different port (433).
+
+`http://<Your-IP>:3000`
+
+> [!warning] No Access?
+> Keep reading, there is more work to be done.
 
 ## Hello is anyone listening?
 You might have noticed that when you visited the URL of your newly launched website nothing happened, your browser tab just spun and spun. AWS EC2 be default only allows inbound network connections on port 22, the default port of SSH.  Since your website is not running on port 22 all other inbound traffic was blocked. Next task is to open up some ports to allow inbound traffic to reach your virtual server.
