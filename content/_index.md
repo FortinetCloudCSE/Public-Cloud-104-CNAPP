@@ -19,4 +19,4 @@ Topics covered:
 
 ## Take a quick quiz
 
-{{< quizframe page="/gamebytag?tag=level-set" height="800" width="100%" >}}
+<!-- {{< quizframe page="/gamebytag?tag=level-set" height="800" width="100%" >}} -->
