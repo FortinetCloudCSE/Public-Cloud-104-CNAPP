@@ -99,7 +99,7 @@ Optional locally: `DOCKER_CONTEXT` / `DOCKER_HOST` — fortihugorunner honors th
 
 **Add a workshop section**: create a page bundle under `content/` (mirror `Cloud-101/`) with `title`, `linkTitle`, `weight` front matter and an `img/` subdir; preview with `launch-server`. Note `content/Cloud-101/_index.md` is one 293-line page — splitting it is a real refactor, not an append.
 
-**Write a plan or session log**: put it in root-level **`plans/`**, never `docs/plans/` — see the first gotcha above.
+**Write a plan or session log**: put it in root-level **`plans/`** as `NNNN_YYYY-MM-DD_<git-username>_<slug>.md`, never `docs/plans/` — see the first gotcha above. `NNNN` is a per-repo sequence; the session log is optional; on completion, durable facts get promoted into this file and the plan is left to decay. See `plans/README.md`.
 
 **Change site chrome** (title, banner, theme variant, analytics, quiz URL): edit `scripts/repoConfig.json`. That is the only config file in the repo.
 
