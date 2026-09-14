@@ -177,9 +177,9 @@ npm install
 
 {{< figure src="img/aws-ec2-npm-install.png" >}}
 
-Notice that we only had 4 direct dependencies in our `package.json` file, but we actually added 229 packages. This is because our direct dependencies have their own dependencies, which in turn might yet more dependencies.  Software is built on top of software. Turtles all the way down.
+Notice that we only had 4 direct dependencies in our `package.json` file, but we actually added 276 packages. This is because our direct dependencies have their own dependencies, which in turn might yet more dependencies.  Software is built on top of software. Turtles all the way down.
 
-Even more concerning is the warning that there are 8 vulnerabilities found, including 5 of high severity.
+Even more concerning is the warning that there are 26 vulnerabilities found, including 5 of critical severity.
 
 Well no time to worry about all of that, you have a website to get up and running!
 ## Start up your website
@@ -242,31 +242,24 @@ To attach a new IAM role to your virtual server click on `Action`, then `Securit
 
 {{< figure src="img/aws-ec2-modify-role.png" >}}
 
-Before you can attach a role you will have to create a new on.  Click on `Create new IAM role` to open a new window in the IAM service page.
+Before you can attach a role you will have to create a new on.  Click on `Create new IAM role` to start the process of creating a new role.
 
 {{< figure src="img/aws-attach-role-before-new-role.png" >}}
 
-On the IAM Role page you will find a list of all the current roles.  You want a new role that can be attached to your virtual machine so click on `Create role`.
+The `Create Role` options will appear below on the same page.  You you can change the name of the new role, if you want.  In the `Additonal policy` section select `Use existing policy`.
 
 {{< figure src="img/aws-iam-role-page.png" >}}
 
-There are a few type of roles you can create select `AWS service` and then in the `Service or use case` drop down select `EC2`.  This will allow your to attach this new role to an EC2 virtual server.
-
-{{< figure src="img/aws-iam-create-ec2-role.png" >}}
-
 Now comes the time to choose which permissions to grant.  Notice that there are over a thousand possible permissions policies you could grant.  Rather than go over all of these trying to find the right one, we will take the simple path and grant `AdministratorAccess`. Choosing the admin role grants more permissions than you need, but ensures that the database access will work. Once again these are just the types of decisions that anyone with a cloud account face everyday.
+
+Click `Create role` to create your new role.
 
 {{< figure src="img/aws-iam-grant-admin.png" >}}
 
-Finally the hardest choice you have made all day. What do you name this new role? Pick something easy to remember and click `Create role`.
-
 {{< figure src="img/aws-iam-create-role.png" >}}
 
-> [!info] Take Notice
-> You can close the IAM role creation page, we are done here!
-
 ## Attach IAM role to your EC2 Virtual Server
-Return to the previous page where you where trying to attache a role.  Click the circle icon, select your new role from the drop down and click `Update IAM role`.
+Make sure your new role is selected and click `Update IAM role`.
 
 {{< figure src="img/ec2-attach-new-role.png" >}}
 
